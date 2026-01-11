@@ -1,0 +1,6 @@
+1. Created schema in amplify/data. 
+2. Ran the sandbox command "npx ampx sandbox". This generated the schema in DynamoDB. 
+
+FYI:
+1. When you generate schemas, you will get errors like "Main actor-isolated initializer 'init(name:isCollection:parent:)' has different actor isolation from nonisolated overridden declaration". To solve that, you have to add the word "nonisolated" in front of public. So before -> after = public class Path: ModelPath<Property> { } -> nonisolated public class Path: ModelPath<Property> { }. This will solve it!
+
